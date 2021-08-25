@@ -1,0 +1,37 @@
+laravel new projectName
+
+composer require laravel/breeze --dev
+
+php artisan breeze:install
+
+npm install && npm run dev
+
+
+Install Tailwind via npm
+
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+
+npx tailwindcss init
+
+install livewire
+
+composer require livewire/livewire
+
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+add the above script in the app.blade.php file
+
+to create modal window in livescript laravel using tailwind
+
+composer require livewire-ui/modal
+php artisan vendor:publish --tag=livewire-ui-modal-views
+
+php artisan vendor:publish
+
+https://philo.dev/laravel-modals-with-livewire/
+
+
+for sweetalert
+
+composer require uxweb/sweet-alert
+
+https://www.itsolutionstuff.com/post/how-to-use-sweetalert-message-box-in-laravel-5example.html
