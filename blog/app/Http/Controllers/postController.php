@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\post;
+use App\Models\tag;
 use Auth;
 use Illuminate\Http\Request;
 use Log;
@@ -49,7 +50,17 @@ class postController extends Controller
         $post->user_id = Auth::User()->id;
         $post->title = $request->title;
         $post->body = $request->body;
+
+        //
+        $fileName = "Photo" . '_' . now()->format('m d Y H i s') . '_Doc1_' . '.' . $request->file('sphoto')->getClientOriginalExtension();
+
+        $request->file('sphoto')->store('Images');
+        $request->file('sphoto')->move('Images', $fileName);
+        $post->imagefile = $fileName;
+        //
         $post->save();
+        $tag = tag::find([4, 2, 7, 5]);
+        $post->tag()->attach($tag);
         //alert()->warning('Sweet Alert with message.');
         alert()->success('Sweet Alert with success.', 'Welcome to ItSolutionStuff.com')->autoclose(3500);
         // alert()->success('Sweet Alert with success.', 'Welcome to ItSolutionStuff.com')->autoclose(3500);
