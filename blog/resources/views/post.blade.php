@@ -11,6 +11,9 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                    {{-- Post Page --}}
                    <livewire:create-post />
+                   <div class="text-blue-800 p-4">
+                    <livewire:show-all-post />
+                    </div>
                 </div>
             </div>
         </div>
