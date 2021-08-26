@@ -35,3 +35,4 @@ for sweetalert
 composer require uxweb/sweet-alert
 
 https://www.itsolutionstuff.com/post/how-to-use-sweetalert-message-box-in-laravel-5example.html
+
