@@ -19,7 +19,7 @@
             </div>
             <!--body-->
             <div class="relative p-6 flex-auto">
-                <form class="w-full max-w-sm" method="POST" action="<?php echo e(route("posts.store")); ?>">
+                <form class="w-full max-w-sm" method="POST" enctype="multipart/form-data" action="<?php echo e(route("posts.store")); ?>">
                     <?php echo csrf_field(); ?>
                     <?php echo method_field('POST'); ?>
                     <div class="md:flex md:items-center mb-6">
@@ -48,6 +48,27 @@
                         
                       </div>
                     </div>
+                    <div class="md:flex md:items-center mb-6">
+                        <div class="md:w-1/3">
+                          <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+                            Upload Photo
+                          </label>
+                        </div>
+                        <div class="md:w-2/3">
+                            <input type='file' id="sphoto" name="sphoto" accept="image/png, image/gif, image/jpeg" onchange="loadFile(event)" />
+                               <img class="h-24 w-24" id="preview_sphoto" src="">
+                                    <script>
+                                    var loadFile = function(event) {
+                                        var output = document.getElementById('preview_sphoto');
+                                        output.src = URL.createObjectURL(event.target.files[0]);
+                                        output.onload = function() {
+                                        URL.revokeObjectURL(output.src) // free memory
+                                        }
+                                    };
+                                    </script>
+
+                        </div>
+                      </div>
                     <div class="md:flex md:items-center mb-6">
                       <div class="md:w-1/3"></div>
                       <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">

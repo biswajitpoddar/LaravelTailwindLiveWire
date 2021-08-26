@@ -19,18 +19,35 @@
                    <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('create-post', [])->html();
-} elseif ($_instance->childHasBeenRendered('h4N40Tf')) {
-    $componentId = $_instance->getRenderedChildComponentId('h4N40Tf');
-    $componentTag = $_instance->getRenderedChildComponentTagName('h4N40Tf');
+} elseif ($_instance->childHasBeenRendered('A9abKyn')) {
+    $componentId = $_instance->getRenderedChildComponentId('A9abKyn');
+    $componentTag = $_instance->getRenderedChildComponentTagName('A9abKyn');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('h4N40Tf');
+    $_instance->preserveRenderedChild('A9abKyn');
 } else {
     $response = \Livewire\Livewire::mount('create-post', []);
     $html = $response->html();
-    $_instance->logRenderedChild('h4N40Tf', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('A9abKyn', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
+                   <div class="text-blue-800 p-4">
+                    <?php
+if (! isset($_instance)) {
+    $html = \Livewire\Livewire::mount('show-all-post', [])->html();
+} elseif ($_instance->childHasBeenRendered('tdMGEKu')) {
+    $componentId = $_instance->getRenderedChildComponentId('tdMGEKu');
+    $componentTag = $_instance->getRenderedChildComponentTagName('tdMGEKu');
+    $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('tdMGEKu');
+} else {
+    $response = \Livewire\Livewire::mount('show-all-post', []);
+    $html = $response->html();
+    $_instance->logRenderedChild('tdMGEKu', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+}
+echo $html;
+?>
+                    </div>
                 </div>
             </div>
         </div>
