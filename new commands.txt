@@ -1,0 +1,38 @@
+php artisan make:livewire forms
+
+in the route
+use App\Http\Livewire\Forms;
+
+Route::get('/forms',Forms::class);
+
+youtube link
+https://www.youtube.com/watch?v=8hSN6cDjs-c
+https://www.youtube.com/watch?v=QjGkDt6pQq4&list=PLQcBFrxTul9I_sMobkwQ3Mus1-2Za2oSG&index=41
+
+protected $rules=[
+'name'=>'required|min:3|max:20',
+'email'=>'required|email'
+];
+
+public function submit()
+{
+	$validateData=$this->validate();
+	Register::create($validateData);
+	session()->flash('success','Form is submitted');
+
+
+https://www.youtube.com/watch?v=4M3oHzR32wA&list=PLQcBFrxTul9I7NB2m3x9qoVkkp1ClASrf&index=14
+
+
+<form id="uploads' enctype="multipart/form-data" wire:submit.prevent="FileUpload">
+
+use livewire\withFileUpload
+
+
+https://blog.codecourse.com/clean-reusable-livewire-modals/
+
+https://techvblogs.com/blog/laravel-livewire-crud-tutorial
+
+
+https://www.nicesnippets.com/blog/laravel-livewire-crud-with-bootstrap-modal-example
+
